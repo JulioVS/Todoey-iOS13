@@ -32,5 +32,24 @@ class TodoListViewController: UITableViewController {
         return cell
         
     }
+    
+    //MARK - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(itemArray[indexPath.row])
+        
+        let cell = tableView.cellForRow(at: indexPath)!
+       
+        if cell.accessoryType == .none {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
 }
 
