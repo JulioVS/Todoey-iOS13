@@ -52,7 +52,11 @@ class TodoListViewController: UITableViewController {
         let item = itemArray[indexPath.row]
         print(item.title!)
 
+//        context.delete(item)
+//        itemArray.remove(at: indexPath.row)
+
         item.done = !item.done
+
         saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
