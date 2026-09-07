@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		435DD0BE304C9FC60073C6AA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DD0BD304C9FC60073C6AA /* CategoryViewController.swift */; };
+		437A2294304F032F001978EC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A2293304F032F001978EC /* Data.swift */; };
 		43CE55CD3049F1EB00FF4C17 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43CE55CB3049F1EB00FF4C17 /* DataModel.xcdatamodeld */; };
 		DD221D67A95820E3C420EF88 /* Pods_Todoey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D301AB211A0B06E50425186E /* Pods_Todoey.framework */; };
 		EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BE4F9239524DB00FB933B /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		435DD0BD304C9FC60073C6AA /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = Todoey/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		437A2293304F032F001978EC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Data.swift; path = Todoey/Data.swift; sourceTree = SOURCE_ROOT; };
 		43BC3BCC304EF8B10078EB4D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore; sourceTree = "<group>"; };
 		43CE55CC3049F1EB00FF4C17 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		70121324127C6FCFBB5E8EEA /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		43BEB8363048586A00C7246E /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				437A2293304F032F001978EC /* Data.swift */,
 				43CE55CB3049F1EB00FF4C17 /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				435DD0BE304C9FC60073C6AA /* CategoryViewController.swift in Sources */,
+				437A2294304F032F001978EC /* Data.swift in Sources */,
 				EB2BE4FE239524DB00FB933B /* TodoListViewController.swift in Sources */,
 				43CE55CD3049F1EB00FF4C17 /* DataModel.xcdatamodeld in Sources */,
 				EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */,
