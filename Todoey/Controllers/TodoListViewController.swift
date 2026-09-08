@@ -64,8 +64,8 @@ class TodoListViewController: UITableViewController {
                 
                 try realm.write {
                     
-                    print(item.title)
                     item.done = !item.done
+//                    realm.delete(item)
                     
                 }
                 
