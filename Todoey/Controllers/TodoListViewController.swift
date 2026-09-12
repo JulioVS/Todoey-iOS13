@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
 
     var todoItems: Results<Item>?
     
@@ -24,7 +24,7 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
     }
 
     //MARK: - TableView Datasource Methods
@@ -37,8 +37,10 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        // We get the cell from the superclass!
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
+        // ...and then add our specific subclass logic
         if let item = todoItems?[indexPath.row] {
             
             cell.textLabel?.text = item.title
@@ -135,6 +137,31 @@ class TodoListViewController: UITableViewController {
 
     }
     
+    //MARK: - Delete Data From Swipe
+    
+    override func updateModel(at indexPath: IndexPath) {
+        
+        // No real need to call the superclass - Just to demonstrate method overriding
+        super.updateModel(at: indexPath)
+
+        print("TodoListViewController -> updateModel()")
+        
+        if let itemForDeletion = todoItems?[indexPath.row] {
+
+            do {
+
+                try realm.write {
+                    realm.delete(itemForDeletion)
+                }
+
+            } catch {
+                print("Error deleting item, \(error)")
+            }
+
+        }
+
+    }
+
 }
 
 //MARK: - Search Bar Methods

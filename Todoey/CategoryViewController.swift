@@ -21,8 +21,6 @@ class CategoryViewController: SwipeTableViewController {
 
         loadCategories()
         
-        tableView.rowHeight = 80.0
-
     }    
     
     //MARK: - TableView Datasource Methods
@@ -35,8 +33,10 @@ class CategoryViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        // We get the cell from the superclass!
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
+        // ...and then add our specific subclass logic
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
 
         return cell
@@ -119,13 +119,18 @@ class CategoryViewController: SwipeTableViewController {
     //MARK: - Delete Data From Swipe
     
     override func updateModel(at indexPath: IndexPath) {
+        
+        // No real need to call the superclass - Just to demonstrate method overriding
+        super.updateModel(at: indexPath)
 
-        if let categoryForDeletion = self.categories?[indexPath.row] {
+        print("CategoryViewController -> updateModel()")
+        
+        if let categoryForDeletion = categories?[indexPath.row] {
 
             do {
 
-                try self.realm.write {
-                    self.realm.delete(categoryForDeletion)
+                try realm.write {
+                    realm.delete(categoryForDeletion)
                 }
 
             } catch {

@@ -12,7 +12,10 @@ import SwipeCellKit
 class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegate {
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
+
+        tableView.rowHeight = 75.0
 
     }
     
@@ -59,6 +62,8 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     func updateModel(at indexPath: IndexPath) {
         
         // Update our Data model
+        print("SwipeTableViewController -> updateModel()")
+        
     }
 
 }
